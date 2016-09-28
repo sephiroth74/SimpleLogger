@@ -17,6 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        disable "AppLinksAutoVerifyError", "AppLinksAutoVerifyWarning", "AllowBackup", "IconMissingDensityFolder",
+                "GoogleAppIndexingWarning", "SetTextI18n", "HardcodedText"
+        htmlReport false
+        textReport true
+        xmlReport false
+        textOutput "stdout"
+        abortOnError false
+    }
 }
 
 dependencies {
