@@ -168,7 +168,7 @@ public final class LoggerFactory {
         public void error(String format, Object... args) { /* do nothing */ }
     }
 
-    public static class FileLogger extends BaseLogger {
+    public static final class FileLogger extends BaseLogger {
 
         private final String filePath;
         private FileWriter logWriter;
@@ -351,6 +351,8 @@ public final class LoggerFactory {
                     case Log.ERROR:
                         Log.e(tag, message);
                         break;
+                    default:
+                        break;
                 }
             }
         }
@@ -440,10 +442,10 @@ public final class LoggerFactory {
         return getLogger(basetag, LoggerType.Console);
     }
 
-    static final HashMap<String, WeakReference<FileLogger>> fileLoggerMap = new HashMap<>();
+    static final HashMap<String, WeakReference<FileLogger>> FILE_LOGGER_MAP = new HashMap<>();
 
     public static synchronized FileLogger getFileLogger(@NonNull String fileName) {
-        final WeakReference<FileLogger> logger = fileLoggerMap.get(fileName);
+        final WeakReference<FileLogger> logger = FILE_LOGGER_MAP.get(fileName);
         if (null != logger) {
             FileLogger fileLogger = logger.get();
             if (null != fileLogger) {
@@ -451,7 +453,7 @@ public final class LoggerFactory {
             }
         }
         FileLogger fileLogger = new FileLogger(fileName);
-        fileLoggerMap.put(fileName, new WeakReference<>(fileLogger));
+        FILE_LOGGER_MAP.put(fileName, new WeakReference<>(fileLogger));
         return fileLogger;
     }
 }
