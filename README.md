@@ -1,8 +1,8 @@
 # Simple Logger for Android
 
 [![Build Status](https://travis-ci.org/sephiroth74/SimpleLogger.svg?branch=master)](https://travis-ci.org/sephiroth74/SimpleLogger)
-<br />
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/it.sephiroth.android.library.simplelogger/simple-logger/badge.svg)](https://maven-badges.herokuapp.com/maven-central/it.sephiroth.android.library.simplelogger/simple-logger)
+[ ![Download](https://api.bintray.com/packages/bintray/jcenter/it.sephiroth.android.library.simplelogger%3Asimple-logger/images/download.svg) ](https://bintray.com/bintray/jcenter/it.sephiroth.android.library.simplelogger%3Asimple-logger/_latestVersion)
 
 
 Installation
